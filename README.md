@@ -38,7 +38,7 @@ Newer versions of Qt might work correctly, if no breaking changes that affect th
 
 ## Showcase
 
-
+![skeletal-blending](https://github.com/user-attachments/assets/888d0f05-9ecf-4f48-b6d3-986000cad34e)
 
 ## Controls
 
