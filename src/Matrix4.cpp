@@ -144,18 +144,18 @@ Matrix4 Matrix4::rotationZ(const float degrees) {
 Matrix4 Matrix4::rotateBetween(const Cartesian3& vector1, const Cartesian3& vector2) {
     const Cartesian3 cross = vector1.cross(vector2).unit();
     const float cos = vector1.unit().dot(vector2.unit());
-    const float sin = std::sqrt(1 - pow(cos, 2));
+    const float sin = std::sqrt(1 - std::pow(cos, 2));
 
     Matrix4 result = identity();
-    result.coordinates[0][0] = cos + (1 - cos) * pow(cross.x, 2);
+    result.coordinates[0][0] = cos + (1 - cos) * std::pow(cross.x, 2);
     result.coordinates[0][1] = (1 - cos) * cross.x * cross.y - sin * cross.z;
     result.coordinates[0][2] = (1 - cos) * cross.x * cross.z + sin * cross.y;
     result.coordinates[1][0] = (1 - cos) * cross.y * cross.x + sin * cross.z;
-    result.coordinates[1][1] = cos + (1 - cos) * pow(cross.y, 2);
+    result.coordinates[1][1] = cos + (1 - cos) * std::pow(cross.y, 2);
     result.coordinates[1][2] = (1 - cos) * cross.y * cross.z - sin * cross.x;
     result.coordinates[2][0] = (1 - cos) * cross.z * cross.x - sin * cross.y;
     result.coordinates[2][1] = (1 - cos) * cross.z * cross.y + sin * cross.x;
-    result.coordinates[2][2] = cos + (1 - cos) * pow(cross.z, 2);
+    result.coordinates[2][2] = cos + (1 - cos) * std::pow(cross.z, 2);
     return result;
 }
 
