@@ -27,17 +27,6 @@ public:
 
     int frameCount;
 
-private:
-    std::map<std::string, int> bvhChannels{
-        {"Xposition", 0},
-        {"Yposition", 1},
-        {"Zposition", 2},
-        {"Xrotation", 3},
-        {"Yrotation", 4},
-        {"Zrotation", 5}
-    };
-
-public:
     // constructor
     BVH();
 
@@ -52,6 +41,15 @@ public:
     BVH* blend(int frame, const BVH& target) const;
 
 private:
+    std::map<std::string, int> bvhChannels{
+        {"Xposition", 0},
+        {"Yposition", 1},
+        {"Zposition", 2},
+        {"Xrotation", 3},
+        {"Yrotation", 4},
+        {"Zrotation", 5}
+    };
+
     float frameTime;
 
     std::vector<std::string> boneNames;

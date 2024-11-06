@@ -22,10 +22,6 @@ class AnimationCycleWidget : public _GEOMETRIC_WIDGET_PARENT_CLASS {
     Q_OBJECT
 
 public:
-    Scene* scene;
-
-    QTimer* animationTimer;
-
     AnimationCycleWidget(QWidget* parent, Scene* scene);
 
 protected:
@@ -39,6 +35,11 @@ protected:
 
 public slots:
     void nextFrame();
+
+private:
+    Scene* scene;
+
+    QTimer* animationTimer;
 };
 
 #endif

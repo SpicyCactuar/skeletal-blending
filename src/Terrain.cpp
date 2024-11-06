@@ -106,7 +106,7 @@ float Terrain::getHeight(float x, float y) const {
     const long row = yInteger;
     const long column = xInteger;
 
-    // OK. There are two possibilities - above or below the TL-BR diagonal
+    // There are two possibilities - above or below the TL-BR diagonal
     // Since this is the line x = y, it's easy to check
     if (xRemainder < yRemainder) {
         // LL triangle
