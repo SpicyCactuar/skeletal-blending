@@ -10,7 +10,7 @@ public:
     // The values (x, y, z, w) for the quaternion w + x*i + y*j + z*k
     Homogeneous4 q;
 
-    // Quaternion with (x, y, z, w) = (0, 0, 0, 1) 
+    // Quaternion with (x, y, z, w) = (0, 0, 0, 1)
     Quaternion();
 
     // Quaternion that rotates (2 * theta) degrees around a given axis

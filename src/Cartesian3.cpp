@@ -41,11 +41,11 @@ Cartesian3 Cartesian3::cross(const Cartesian3& other) const {
 }
 
 float Cartesian3::length() const {
-    return sqrt(x * x + y * y + z * z);
+    return std::sqrt(x * x + y * y + z * z);
 }
 
 Cartesian3 Cartesian3::unit() const {
-    const float length = sqrt(x * x + y * y + z * z);
+    const float length = std::sqrt(x * x + y * y + z * z);
     return Cartesian3(x / length, y / length, z / length);
 }
 

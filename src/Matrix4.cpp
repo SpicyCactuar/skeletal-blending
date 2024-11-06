@@ -144,7 +144,7 @@ Matrix4 Matrix4::rotationZ(const float degrees) {
 Matrix4 Matrix4::rotateBetween(const Cartesian3& vector1, const Cartesian3& vector2) {
     const Cartesian3 cross = vector1.cross(vector2).unit();
     const float cos = vector1.unit().dot(vector2.unit());
-    const float sin = sqrt(1 - pow(cos, 2));
+    const float sin = std::sqrt(1 - pow(cos, 2));
 
     Matrix4 result = identity();
     result.coordinates[0][0] = cos + (1 - cos) * pow(cross.x, 2);
