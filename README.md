@@ -1,9 +1,17 @@
 # Skeletal Blending
 
+![skeletal-blending](https://github.com/user-attachments/assets/888d0f05-9ecf-4f48-b6d3-986000cad34e)
+
 Qt application showcasing skeletal animation blending of BVH (Biovision hierarchical data) data.
 A single character with basic movement (rest, run and veer) can be moved around an undulating terrain.
 
-![skeletal-blending](https://github.com/user-attachments/assets/888d0f05-9ecf-4f48-b6d3-986000cad34e)
+Each bone is rendered from a recursive hierarchical joint transformation matrix constructed as follows:
+
+$J = J * T_{J} * R_{J}$
+
+Joint rotation is applied first, following translation and finally the accumulated transform.
+
+Animations are blended by `slerp`ing between keyframe rotations over a fixed period of time.
 
 ## Project Structure
 
